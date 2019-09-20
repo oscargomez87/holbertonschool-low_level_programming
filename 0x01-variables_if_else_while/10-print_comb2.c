@@ -19,13 +19,15 @@ int main(void)
 		{
 			putchar(i);
 			putchar(j);
-			if (i < 58 && j < 57)
+			if (i == 57 && j == 57)
+			{
+				putchar('\n');
+			} else if (i < 58 && j < 58)
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
 	}
-	putchar('\n');
 	return (0);
 }
