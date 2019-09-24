@@ -1,4 +1,4 @@
-int _putchar(char c);
+#include "holberton.h"
 
 /**
  * print_alphabet_x10 - prints the alphabet, in lowercase, ten times,
