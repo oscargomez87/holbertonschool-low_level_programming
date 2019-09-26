@@ -16,14 +16,16 @@ int main(void)
 		n1 = i / 3;
 		n2 = i / 5;
 		if (((n1 * 3) == i) && !((n2 * 5) == i))
-			printf("Fizz ");
+			printf("Fizz");
 		else if ((n2 * 5) == i && !((n1 * 3) == i))
-			printf("Buzz ");
+			printf("Buzz");
 		else if (((n1 * 3) == i) && ((n2 * 5) == i))
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		else
-			printf("%d ", i);
+			printf("%d", i);
+		if (i < 100)
+			printf(" ");
 	}
-	printf("/n");
+	printf("\n");
 	return (0);
 }
