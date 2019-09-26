@@ -22,7 +22,7 @@ void print_number(int n)
  */
 void print_negative(int n)
 {
-	_putchar('-');
+	_putchar(45);
 	n *= -1;
 	print_positive(n);
 }
