@@ -1,5 +1,9 @@
 void _putchar(char);
 
+/**
+ * puts2 - rints every other character of a string
+ * @str: string to process
+ */
 void puts2(char *str)
 {
 	int i = 0;
