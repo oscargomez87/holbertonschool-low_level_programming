@@ -7,13 +7,28 @@
  */
 void print_array(int *a, int n)
 {
-	int i;
+	int i = 0, j;
 
-	for (i = 0; i < n; i++)
+	while (a[i])
+		i++;
+	i--;
+	if (i < n)
 	{
-		if ((i + 1) != n)
-			printf("%d, ", *(a + i));
-		else
-			printf("%d\n", *(a + i));
+		for (j = 0; j < i; j++)
+                {
+                        if ((j + 1) != i)
+                                printf("%d, ", *(a + j));
+                        else
+                                printf("%d\n", *(a + j));
+                }
+	} else
+	{
+		for (j = 0; j < n; j++)
+		{
+			if ((j + 1) != n)
+				printf("%d, ", *(a + j));
+			else
+				printf("%d\n", *(a + j));
+		}
 	}
 }
