@@ -9,8 +9,8 @@ void rev_string(char *s)
 
 	while (*(s + i))
 		i++;
-	for (; i > 0; i--)
+	for (; i >= 0; i--)
 		tmp[9 - i] = (*(s + (i - 1)));
 	for (j = 0; j < 10; j++)
-		*s = *tmp;
+		*(s + j) = tmp[j];
 }
