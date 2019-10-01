@@ -1,4 +1,4 @@
-void _putchar(char);
+#include "holberton.h"
 
 /**
  * puts2 - rints every other character of a string
@@ -6,12 +6,15 @@ void _putchar(char);
  */
 void puts2(char *str)
 {
-	int i = 0;
+	int i = 0, j;
 
-	while (*(str + i))
+	while (str[i])
+		i++;
+	i--;
+	while (j <= i)
 	{
-		_putchar(*(str + i));
-		i = i + 2;
+		_putchar(*(str + j));
+		j = j + 2;
 	}
 	_putchar('\n');
 }
