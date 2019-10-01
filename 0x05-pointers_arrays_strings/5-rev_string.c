@@ -1,4 +1,3 @@
-#include <stdio.h>
 /**
  * rev_string - prints a string in reverse
  * @s: string to print
