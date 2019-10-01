@@ -19,4 +19,5 @@ void rev_string(char *s)
 		*start = tmp;
 		end--;
 		start++;
+	}
 }
