@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  * rev_string - prints a string in reverse
  * @s: string to print
@@ -5,12 +6,18 @@
 void rev_string(char *s)
 {
 	int i = 0, j;
-	char tmp[10];
+	char *start, *end, tmp;
 
+	end = s;
+	start = s;
 	while (*(s + i))
 		i++;
-	for (; i >= 0; i--)
-		tmp[9 - i] = (*(s + (i - 1)));
-	for (j = 0; j < 10; j++)
-		*(s + j) = tmp[j];
+	end = end + (i - 1);
+	for (j = 0; j < i / 2; j++)
+	{
+		tmp = *end;
+		*end = *start;
+		*start = tmp;
+		end--;
+		start++;
 }
