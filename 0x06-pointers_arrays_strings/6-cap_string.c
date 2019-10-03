@@ -12,14 +12,7 @@ char *cap_string(char *s)
 		switch (s[i])
 		{
 		case 32:
-		case 13:
 		case 10:
-			if (s[i + 1] != '\0')
-			{
-				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
-					s[i + 1] = s[i + 1] - 32;
-			}
-			break;
 		case 9:
 		case 44:
 		case 59:
