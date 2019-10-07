@@ -9,23 +9,21 @@
 char *_strstr(char *haystack, char *needle)
 {
 	int i = 0, j = 0;
-	char *p = '\0';
 
-	while (needle[i])
+	while (haystack[j])
 	{
-		while (haystack[j])
+		if (needle[i] == haystack[j])
 		{
-			if (needle[i] == haystack[j])
+
+			if (needle[i + 1] == '\0')
 			{
-				if (p == '\0')
-				{
-					p = &haystack[j];
-					break;
-				}
+				printf("%c\n", haystack[j]);
+				return (&haystack[j - i]);
 			}
-			j++;
-		}
-		i++;
+			i++;
+		} else
+			i = 0;
+		j++;
 	}
-	return (p);
+	return (0);
 }
