@@ -1,7 +1,15 @@
+/**
+ * _strstr - locates a substring.
+ * @haystack: string to search in
+ * @needle: string to search
+ * Return: a pointer to the beginning of the located substring,
+ * or NULL if the substring is not found.
+ */
+
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j= 0, k = 0;
-	char *p;
+	int i = 0, j= 0;
+	char *p = NULL;
 
 	while (needle[i])
 	{
@@ -9,15 +17,12 @@ char *_strstr(char *haystack, char *needle)
 		{
 			if (needle[i] == haystack[j])
 			{
-				if (k == 0)
+				if (p == NULL)
 				{
 					p = &haystack[j];
+					printf("p %p\n", p );
 					break;
 				}
-			}
-			else
-			{
-				i = 0;
 			}
 			j++;
 		}
