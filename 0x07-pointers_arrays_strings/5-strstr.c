@@ -16,10 +16,7 @@ char *_strstr(char *haystack, char *needle)
 		{
 
 			if (needle[i + 1] == '\0')
-			{
-				printf("%c\n", haystack[j]);
 				return (&haystack[j - i]);
-			}
 			i++;
 		} else
 			i = 0;
