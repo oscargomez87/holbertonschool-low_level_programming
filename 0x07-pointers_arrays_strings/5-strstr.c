@@ -8,7 +8,7 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j= 0;
+	int i = 0, j = 0;
 	char *p = NULL;
 
 	while (needle[i])
@@ -20,7 +20,6 @@ char *_strstr(char *haystack, char *needle)
 				if (p == NULL)
 				{
 					p = &haystack[j];
-					printf("p %p\n", p );
 					break;
 				}
 			}
