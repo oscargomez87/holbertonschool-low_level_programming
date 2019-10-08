@@ -5,8 +5,6 @@
  * Return: pointer to the character or null if its not found.
  */
 char *_strchr(char *s, char c)
-{
-	int i = 0;
 
 	while (*s)
 	{
