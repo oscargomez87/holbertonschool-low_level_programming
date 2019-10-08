@@ -8,11 +8,13 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, k = 0;
 
+	while (needle[k])
+		k++;
 	if (needle == '\0')
-		return (0);
-	else if (needle == "")
+		return ("");
+	else if (k == 0)
 		return (haystack);
 	while (haystack[j])
 	{
