@@ -1,4 +1,4 @@
-\/**
+/**
  * _strstr - locates a substring.
  * @haystack: string to search in
  * @needle: string to search
