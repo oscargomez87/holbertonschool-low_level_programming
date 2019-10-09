@@ -3,12 +3,12 @@ int _count(int, int);
 /**
  * _sqrt_recursion - Finds natural square root of a number
  * @n: number to evaluate
- * Return: 1 if the number has a square root, otherwise -1
+ * Return: the square root if it has, otherwise -1
  */
 int _sqrt_recursion(int n)
 {
-	if (n < 1)
-		return (-1);
+	if (n == 0)
+		return (0);
 	else if (n == 1)
 		return (1);
 	else if (n > 1000)
@@ -31,7 +31,7 @@ int _count(int n, int i)
 {
 	int j = -1;
 
-	if (i > 2)
+	if (i > 0)
 	{
 		if (i * i != n)
 			j = _count(n, i - 1);
