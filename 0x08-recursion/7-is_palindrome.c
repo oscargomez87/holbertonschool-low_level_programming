@@ -36,13 +36,15 @@ int _count(char *s)
  */
 int check(char *s, int i, int j)
 {
-	int k = 0;
+	int k = 1;
 
-	if (s[i] == s[j])
+	if (i > j)
 	{
-		k = check(s, i - 1, j + 1);
-		return (1);
-	} else
-		return (0);
+		if (s[i] == s[j])
+		{
+			k = check(s, i - 1, j + 1);
+		} else
+			return (0);
+	}
 	return (k);
 }
