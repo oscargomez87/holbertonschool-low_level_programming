@@ -12,7 +12,7 @@ int _sqrt_recursion(int n)
 	else if (n == 1)
 		return (1);
 	else if (n > 10000)
-                return (_count(n, n / 100));
+		return (_count(n, n / 100));
 	else if (n > 1000)
 		return (_count(n, n / 10));
 	else if (n > 100 && n < 1000)
