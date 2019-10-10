@@ -42,6 +42,7 @@ int check(char *s, int i, int j)
 	{
 		k = check(s, i - 1, j + 1);
 		return (1);
-	}
+	} else
+		return (0);
 	return (k);
 }
