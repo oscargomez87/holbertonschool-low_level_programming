@@ -1,5 +1,4 @@
 # 0x09-static_libraries
-
 * **libholberton.a**: Static library libholberton.a containing the next functions
     - int _putchar(char c).
     - int _islower(int c).
