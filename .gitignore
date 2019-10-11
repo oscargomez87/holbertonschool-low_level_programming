@@ -1,7 +1,6 @@
 **/*
-!.gitignore
-**/!.gitignore
-**/!*.c
-**/!*main*
-**/!*.h
-**/!README.md
+!**/.gitignore
+!**/*.c
+!**/*main*
+!**/*.h
+!**/README.md
