@@ -27,7 +27,7 @@ int _sqrt_recursion(int n)
  * _count - Finds natural square root of a number
  * @n: limit
  * @i: starting number
- * Return: 1 if the number has a square root, otherwise -1
+ * Return: i if the number has a square root, otherwise -1
  */
 int _count(int n, int i)
 {
