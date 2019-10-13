@@ -14,12 +14,11 @@ int main(int argc, char *argv[])
 {
 	int num = 0, sum = 0;
 
-	if (argc > 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
-	} else if (argc < 2)
-		printf("0\n");
+	}
 	if (_checki(argv[1]))
 	{
 		num = atoi(argv[1]);
