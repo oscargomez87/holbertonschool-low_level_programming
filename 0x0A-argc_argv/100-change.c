@@ -7,12 +7,12 @@ int _checki(char *);
  * for an amount of money
  * @argc: number of arguments
  * @argv: ammount of money
- * Return: 0 if no arguments were passed, Error if one argument cant be added,
- * otherwise the sum of the arguments
+ * Return: 0 if no arguments were passed, Error if more than one argument is passed,
+ * otherwise the sum of cents
  */
 int main(int argc, char *argv[])
 {
-	int num = 0, sum = 0;
+	unsigned int num = 0, sum = 0;
 
 	if (argc != 2)
 	{
