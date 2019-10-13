@@ -12,7 +12,8 @@ int _checki(char *);
  */
 int main(int argc, char *argv[])
 {
-	unsigned int num = 0, sum = 0;
+	long num = 0;
+	int sum = 0;
 
 	if (argc != 2)
 	{
@@ -22,28 +23,31 @@ int main(int argc, char *argv[])
 	if (_checki(argv[1]))
 	{
 		num = atoi(argv[1]);
-		while (num > 0)
+		if (num != -1)
 		{
-			if (num % 25 == 0)
+			while (num > 0)
 			{
-				sum += 1;
-				num -= 25;
-			} else if (num % 10 == 0)
-			{
-				sum += 1;
-				num -= 10;
-			} else if (num % 5 == 0)
-			{
-				sum += 1;
-				num -= 5;
-			} else if (num % 2 == 0)
-			{
-				sum += 1;
-				num -= 2;
-			} else
-			{
-				sum += 1;
-				num -= 1;
+				if (num % 25 == 0)
+				{
+					sum += 1;
+					num -= 25;
+				} else if (num % 10 == 0)
+				{
+					sum += 1;
+					num -= 10;
+				} else if (num % 5 == 0)
+				{
+					sum += 1;
+					num -= 5;
+				} else if (num % 2 == 0)
+				{
+					sum += 1;
+					num -= 2;
+				} else
+				{
+					sum += 1;
+					num -= 1;
+				}
 			}
 		}
 		printf("%d\n", sum);
