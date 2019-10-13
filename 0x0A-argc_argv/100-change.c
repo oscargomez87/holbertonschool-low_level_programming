@@ -3,7 +3,8 @@
 int _checki(char *);
 
 /**
- * main - prints the minimum number of coins to make change for an amount of money
+ * main - prints the minimum number of coins to make change
+ * for an amount of money
  * @argc: number of arguments
  * @argv: ammount of money
  * Return: 0 if no arguments were passed, Error if one argument cant be added,
@@ -12,6 +13,7 @@ int _checki(char *);
 int main(int argc, char *argv[])
 {
 	int num = 0, sum = 0;
+
 	if (argc > 2)
 	{
 		printf("Error\n");
@@ -20,37 +22,35 @@ int main(int argc, char *argv[])
 	{
 		printf("0\n");
 		return (1);
-	} else
+	}
+	if (_checki(argv[1]))
 	{
-		if (_checki(argv[1]))
+		num = atoi(argv[1]);
+		while (num > 0)
 		{
-			num = atoi(argv[1]);
-			while (num > 0)
+			if (num % 25 == 0)
 			{
-				if (num % 25 == 0)
-				{
-					sum += 1;
-					num -= 25;
-				} else if (num % 10 == 0)
-				{
-					sum += 1;
-					num -= 10;
-				} else if (num % 5 == 0)
-				{
-					sum += 1;
-					num -= 5;
-				} else if (num % 2 == 0)
-				{
-					sum += 1;
-					num -= 2;
-				} else
-				{
-					sum += 1;
-					num -= 1;
-				}
+				sum += 1;
+				num -= 25;
+			} else if (num % 10 == 0)
+			{
+				sum += 1;
+				num -= 10;
+			} else if (num % 5 == 0)
+			{
+				sum += 1;
+				num -= 5;
+			} else if (num % 2 == 0)
+			{
+				sum += 1;
+				num -= 2;
+			} else
+			{
+				sum += 1;
+				num -= 1;
 			}
-			printf("%d\n", sum);
 		}
+		printf("%d\n", sum);
 	}
 	return (0);
 }
