@@ -19,10 +19,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	} else if (argc < 2)
-	{
 		printf("0\n");
-		return (1);
-	}
 	if (_checki(argv[1]))
 	{
 		num = atoi(argv[1]);
@@ -51,7 +48,8 @@ int main(int argc, char *argv[])
 			}
 		}
 		printf("%d\n", sum);
-	}
+	} else
+		printf("0\n");
 	return (0);
 }
 
