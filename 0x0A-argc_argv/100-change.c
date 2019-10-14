@@ -26,13 +26,13 @@ int main(int argc, char *argv[])
 	{
 		while (num > 0)
 		{
-			if (num % 25 == 0)
+			if (num - 25 >= 0)
 				num -= 25;
-			else if (num % 10 == 0)
+			else if (num - 10 >= 0)
 				num -= 10;
-			else if (num % 5 == 0)
+			else if (num - 5 >= 0)
 				num -= 5;
-			else if (num % 2 == 0)
+			else if (num - 2 >= 0)
 				num -= 2;
 			else
 				num -= 1;
