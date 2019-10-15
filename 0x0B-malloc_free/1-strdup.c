@@ -1,4 +1,10 @@
 #include <stdlib.h>
+
+/**
+ * _strdup - copies a string and returns a pointer to that string
+ * @str: string to copy
+ * Return: pointer to copied string
+ */
 char *_strdup(char *str)
 {
 	unsigned int i, size = 0;
