@@ -4,8 +4,8 @@
  * alloc_grid - returns a pointer to a 2 dimensional array of integers.
  * @width: width of the multidimentional array
  * @height: height of the multidimentional array
- * Return: a pointer to the start of the multidimentional array or null if width
- * and height are 0 or less
+ * Return: a pointer to the start of the multidimentional array
+ * or null if width and height are 0 or less
  */
 int **alloc_grid(int width, int height)
 {
