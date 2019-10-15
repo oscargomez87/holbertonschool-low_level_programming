@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _strdup - copies a string and returns a pointer to that string
@@ -7,7 +8,7 @@
  */
 char *_strdup(char *str)
 {
-	unsigned int i, size = 0;
+	int i, size = 0;
 	char *p;
 
 	if (!*str)
@@ -19,6 +20,5 @@ char *_strdup(char *str)
 		return (NULL);
 	for (i = 0; i < size; i++)
 		p[i] = str[i];
-	p[i] = '\0';
 	return (p);
 }
