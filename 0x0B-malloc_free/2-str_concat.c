@@ -11,9 +11,9 @@ char *str_concat(char *s1, char *s2)
 	char *p;
 	int i, size1 = 0, size2 = 0;
 
-	if (!s1)
+	if (s1 == NULL)
 		s1 = "";
-	else if (!s2)
+	if (s2 == NULL)
 		s2 = "";
 	while (s1[size1])
 		size1++;
