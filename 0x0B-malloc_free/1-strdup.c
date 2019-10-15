@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * _strdup - copies a string and returns a pointer to that string
@@ -13,12 +12,10 @@ char *_strdup(char *str)
 
 	if (!str)
 		return (NULL);
-	else if (!*str)
-		return (NULL);
 	while (str[size])
 		size++;
 	p = malloc(size * sizeof(char));
-	if (p == NULL)
+	if (!p)
 		return (NULL);
 	for (i = 0; i < size; i++)
 		p[i] = str[i];
