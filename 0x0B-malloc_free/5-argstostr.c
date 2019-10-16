@@ -1,7 +1,13 @@
 #include <stdlib.h>
 #include <stdio.h>
-
 int _strlen(char *);
+
+/**
+ * argstostr - concatenates all the arguments given
+ * @ac: number of arguments
+ * @av: arguments
+ * Return: pointer to concatenated arguments
+ */
 char *argstostr(int ac, char **av)
 {
 	int i, j, k, gsize = 0;
@@ -35,11 +41,16 @@ char *argstostr(int ac, char **av)
 			j++;
 		}
 	}
-	return(s);
+	return (s);
 }
 
+/**
+ * _strlen - gets the length of a string
+ * @s: string
+ * Return: length of string
+ */
 int _strlen(char *s)
-{	
+{
 	if (!*s)
 		return (0);
 	else
