@@ -41,6 +41,7 @@ char *argstostr(int ac, char **av)
 			j++;
 		}
 	}
+	s[i] = '\0';
 	return (s);
 }
 
