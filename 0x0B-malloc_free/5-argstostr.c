@@ -13,7 +13,7 @@ char *argstostr(int ac, char **av)
 	int i, j, k, gsize = 0;
 	char *s;
 
-	if (ac == 0 || !av)
+	if (ac == 1 || !av)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 		gsize += _strlen(av[i]);
