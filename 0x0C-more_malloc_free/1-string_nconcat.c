@@ -19,7 +19,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	sizes1 = _strlen(s1);
 	sizes2 = _strlen(s2);
-	printf("sizes1 = %d, sizes2 = %d\n", sizes1, sizes2);
 	if (num >= sizes2)
 	{
 		p = malloc(sizeof(char) * (sizes1 + sizes2 + 1));
