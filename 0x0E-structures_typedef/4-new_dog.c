@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "dog.h"
 int _stringlength(char *);
 char *_fill(int, char *, char *);
@@ -35,7 +34,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	_fill(i, n, name);
-	_fill(j, o, name);
+	_fill(j, o, owner);
 	ndog->name = n;
 	ndog->age = age;
 	ndog->owner = o;
