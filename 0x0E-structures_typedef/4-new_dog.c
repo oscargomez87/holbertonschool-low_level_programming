@@ -16,30 +16,31 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *n, *o;
 	int i, j;
 
+	ndog = malloc(sizeof(dog_t));
+	if (ndog == NULL)
+        {
+                free(ndog);
+                return (NULL);
+        }
 	i =  _stringlength(name);
 	j =  _stringlength(owner);
 	n = malloc((i + 1) * sizeof(char));
 	if (n == NULL)
 	{
 		free(n);
+		free(ndog);
 		return (NULL);
 	}
 	o = malloc((j + 1) * sizeof(char));
 	if (o == NULL)
 	{
+		free(n);
 		free(o);
+		free(ndog);
 		return (NULL);
 	}
 	_fill(i, n, name);
 	_fill(j, o, name);
-	ndog = malloc(sizeof(dog_t));
-	if (ndog == NULL)
-	{
-		free(ndog);
-		free(n);
-		free(o);
-		return (NULL);
-	}
 	ndog->name = name;
 	ndog->age = age;
 	ndog->owner = owner;
