@@ -18,9 +18,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	ndog = malloc(sizeof(dog_t));
 	if (ndog == NULL)
-	{
 		return (NULL);
-	}
 	i =  _stringlength(name);
 	j =  _stringlength(owner);
 	n = malloc((i + 1) * sizeof(char));
@@ -38,9 +36,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	_fill(i, n, name);
 	_fill(j, o, name);
-	ndog->name = name;
+	ndog->name = n;
 	ndog->age = age;
-	ndog->owner = owner;
+	ndog->owner = o;
 	return (ndog);
 }
 
