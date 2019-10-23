@@ -1,6 +1,8 @@
 #ifndef CALC_H
 #define CALC_H
 
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * struct op - Mathematical operations
  * @op: sign symbolizing operation

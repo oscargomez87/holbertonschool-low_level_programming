@@ -1,5 +1,5 @@
 #include "3-calc.h"
-#include <stdlib.h>
+
 /**
  * get_op_func - Determines the kind of opeeation
  * @s: sign of operation
