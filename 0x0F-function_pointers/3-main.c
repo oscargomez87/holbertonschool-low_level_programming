@@ -21,9 +21,9 @@ int main(int argc, char **argv)
 		ptr = get_op_func(argv[2]);
 		printf("%d\n", ptr(atoi(argv[1]), atoi(argv[3])));
 	} else
-        {
-                printf("Error\n");
-                return (99);
-        }
+	{
+		printf("Error\n");
+		return (99);
+	}
 	return (0);
 }
