@@ -1,8 +1,13 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "3-calc.h"
-
-int main(__attribute__((unused)) int argc, char **argv)
+/**
+ * main - Program that performs simple operations between 2 numbers
+ * @argc: number of arguments
+ * @argv: arguments
+ * Return: 0
+ */
+int main(int argc, char **argv)
 {
 	int (*ptr)(int, int);
 
@@ -16,7 +21,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 		printf("Error\n");
 		return (100);
 	}
-	if (argv[2][0] == '/' || argv[2][0] == '*' || argv[2][0] == '-' \
+	if (argv[2][0] == '/' || argv[2][0] == '*' || argv[2][0] == '-'
 	    || argv[2][0] == '+' || argv[2][0] == '%')
 	{
 		ptr = get_op_func(argv[2]);
