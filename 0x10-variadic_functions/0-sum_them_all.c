@@ -3,6 +3,7 @@
 /**
  * sum_them_all - Adds all parameters received
  * @n: Number of arguments
+ * Return: The sum of all parameters or 0 if the number of parameters is 0
  */
 int sum_them_all(const unsigned int n, ...)
 {
