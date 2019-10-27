@@ -79,11 +79,5 @@ void _printf(va_list arg)
  */
 void _prints(va_list arg)
 {
-	char *s;
-
-	s = va_arg(arg, char *);
-	if (s == NULL)
-		printf("%p", NULL);
-	else
-		printf("%s", s);
+	printf("%s", va_arg(arg, char *));
 }
