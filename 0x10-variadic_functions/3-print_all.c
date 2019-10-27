@@ -85,5 +85,5 @@ void _prints(va_list arg)
 	if (s == NULL)
 		printf("%p", NULL);
 	else
-		printf("%p", s);
+		printf("%s", s);
 }

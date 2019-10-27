@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-	print_all("cefs", 'H', 5.30, NULL);
+	print_all("cefs", 'H', 5.30, "lberton");
 	return (0);
 }
