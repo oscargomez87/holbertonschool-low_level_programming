@@ -23,7 +23,7 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(arg, format);
-	while (format[j] != '\0')
+	while (format[j] != '\0' && format[j] != NULL)
 	{
 		i = 0;
 		while (i < 4)
@@ -83,7 +83,9 @@ void _prints(va_list arg)
 	char *s = va_arg(arg, char *);
 
 	if (s == NULL)
+	{
 		printf("%p", NULL);
-	else
-		printf("%s", s);
+		return;
+	}
+	printf("%s", s);
 }
