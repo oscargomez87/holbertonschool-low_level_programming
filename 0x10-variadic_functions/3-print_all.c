@@ -14,6 +14,7 @@ void print_all(const char * const format, ...)
 {
 	va_list arg;
 	int j = 0, i = 0;
+	char *end = "";
 	form_t frm[] = {
 		{"c", _printc},
 		{"i", _printi},
@@ -27,11 +28,11 @@ void print_all(const char * const format, ...)
 		i = 0;
 		while (i < 4)
 		{
-			if (format[j] == *(frm[i]).name)
+			if (format[j] == frm[i].name[0])
 			{
+				printf("%s", end);
 				frm[i].f(arg);
-				if (i + 1 != 4)
-					printf(", ");
+				end = ", ";
 				break;
 			}
 			i++;
@@ -79,5 +80,10 @@ void _printf(va_list arg)
  */
 void _prints(va_list arg)
 {
-	printf("%s", va_arg(arg, char *));
+	char *s = va_arg(arg, char *);
+
+	if (s == NULL)
+		printf("%p", NULL);
+	else
+		printf("%s", s);
 }
