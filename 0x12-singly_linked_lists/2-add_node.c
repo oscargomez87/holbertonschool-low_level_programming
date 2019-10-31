@@ -1,6 +1,5 @@
 #include "lists.h"
-#include <string.h>
-#include <stdlib.h>
+int _strlen_recursion(char *s);
 
 /**
  * add_node - adds a node to a list
@@ -23,16 +22,29 @@ list_t *add_node(list_t **head, const char *str)
 	if (*head == NULL)
 	{
 		new->str = s;
-		new->len = strlen(s);
+		new->len = _strlen_recursion(s);
 		new->next = NULL;
 		*head = new;
 	}
 	else
 	{
 		new->str = s;
-		new->len = strlen(s);
+		new->len = _strlen_recursion(s);
 		new->next = *head;
 		*head = new;
 	}
 	return (*head);
+}
+
+/**
+ * _strlen_recursion - Returns the length of a string
+ * @s: string
+ * Return: Length of string
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s == '\0')
+		return (0);
+	else
+		return (1 + _strlen_recursion(s + 1));
 }
