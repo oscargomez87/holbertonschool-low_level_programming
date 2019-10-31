@@ -1,5 +1,5 @@
 #include "lists.h"
-int _strlen_recursion(char *):
+int _strlen_recursion(char *);
 
 /**
  * add_node_end - adds a node to the end of a list
