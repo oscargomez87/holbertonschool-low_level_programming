@@ -3,6 +3,7 @@
 /**
  * delete_nodeint_at_index - Deletes a node from a linked list
  *
+ * @head: start of list to delete node from
  * @index: position of the node in the list (begining is 0)
  * Return: 1 if successful, otherwise -1
  */
