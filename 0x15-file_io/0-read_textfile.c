@@ -22,6 +22,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (s == NULL)
 		return (0);
 	nb = read(fd, s, letters);
+	if (nb == -1)
+	{
+		close(fd);
+		free(s);
+		return (0);
+	}
 	close(fd);
 	s[nb] = '\0';
 	while (s[i] != '\0')
