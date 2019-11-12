@@ -1,5 +1,13 @@
 #include "holberton.h"
 
+/**
+ * create_file - creates a file with rw persmissions.
+ *
+ * @filename: name of the new file
+ * @text_content: content to write in created file
+ * Return: 1 if successful, -1 otherwise
+ *
+ */
 int create_file(const char *filename, char *text_content)
 {
 	int fd, res;
