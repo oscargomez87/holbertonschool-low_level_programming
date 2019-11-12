@@ -6,7 +6,7 @@
  *
  * @filename: path to file.
  * @letters: number of letters to read from file.
- * Return: number of bytes read.
+ * Return: number of bytes read or 0 on error
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -18,23 +18,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
-	s = malloc((letters + 1) * sizeof(char));
+	s = malloc(letters * sizeof(char));
 	if (s == NULL)
 		return (0);
 	nb = read(fd, s, letters);
+	close(fd);
 	if (nb == -1)
 	{
-		close(fd);
 		free(s);
 		return (0);
 	}
-	close(fd);
-	s[nb] = '\0';
-	while (s[i] != '\0')
-	{
-		putchar(s[i]);
-		i++;
-	}
+	i = write(STDOUT_FILENO, s, nb);
 	free(s);
-	return (nb);
+	if (i == -1)
+		return (0);
+	return (i);
 }
