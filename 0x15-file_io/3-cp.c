@@ -36,8 +36,9 @@ int main(int ac, char **av)
 	cpy = malloc(1024 * sizeof(char));
 	while ((nb = read(fdf, cpy, 1024)) > 0)
 	{
-		if ((wo = write(fdt, cpy, nb)) != nb)
+		if (write(fdt, cpy, nb) != nb)
 		{
+			wo = -1;
 			nb = -1;
 			break;
 		}
