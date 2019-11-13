@@ -37,8 +37,13 @@ int main(int ac, char **av)
 	while ((nb = read(fdf, cpy, 1024)) > 0)
 	{
 		if (write(fdt, cpy, nb) != nb)
-			_err99(av[2]);
+		{
+			nb = -1;
+			break;
+		}
 	}
+	if (nb == -1)
+		_err98(av[1]);
 	free(cpy);
 	if (close(fdf) == -1)
 		_err100(fdf);
