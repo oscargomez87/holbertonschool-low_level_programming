@@ -53,7 +53,7 @@ int main(int ac, char **av)
  */
 void _err97(void)
 {
-	dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 }
 
@@ -64,7 +64,7 @@ void _err97(void)
  */
 void _err98(char *s)
 {
-	dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", s);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", s);
 	exit(98);
 }
 
@@ -75,7 +75,7 @@ void _err98(char *s)
  */
 void _err99(char *s)
 {
-	dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", s);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", s);
 	exit(99);
 }
 
@@ -86,6 +86,6 @@ void _err99(char *s)
  */
 void _err100(int n)
 {
-	dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n", n);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", n);
 	exit(100);
 }
