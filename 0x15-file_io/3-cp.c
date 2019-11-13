@@ -21,7 +21,7 @@ void _err100(int);
  */
 int main(int ac, char **av)
 {
-	int fdf, fdt, nb;
+	int fdf, fdt, nb, wo;
 	char *cpy;
 
 	if (ac != 3)
@@ -36,12 +36,14 @@ int main(int ac, char **av)
 	cpy = malloc(1024 * sizeof(char));
 	while ((nb = read(fdf, cpy, 1024)) > 0)
 	{
-		if (write(fdt, cpy, nb) != nb)
+		if ((wo = write(fdt, cpy, nb)) != nb)
 		{
 			nb = -1;
 			break;
 		}
 	}
+	if (wo == -1)
+		_err99(av[2]);
 	if (nb == -1)
 		_err98(av[1]);
 	free(cpy);
