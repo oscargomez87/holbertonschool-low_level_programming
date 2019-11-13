@@ -7,6 +7,11 @@
 #include <stdio.h>
 #include <unistd.h>
 
+void _err97(void);
+void _err98(char *);
+void _err99(char *);
+void _err100(int);
+
 /**
  * main - copies the contents of one file to another
  *
@@ -59,7 +64,7 @@ void _err97(void)
  */
 void _err98(char *s)
 {
-	dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", *s);
+	dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", s);
 	exit(98);
 }
 
@@ -70,7 +75,7 @@ void _err98(char *s)
  */
 void _err99(char *s)
 {
-	dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", *s);
+	dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", s);
 	exit(99);
 }
 
