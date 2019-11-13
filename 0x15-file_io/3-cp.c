@@ -20,39 +20,67 @@ int main(int ac, char **av)
 	char *cpy;
 
 	if (ac != 3)
-	{
-		dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		_err97();
 	fdf = open(av[1], O_RDONLY);
 	if (fdf == -1)
-	{
-		dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n",
-			av[1]);
-		exit(98);
-	}
+		_err98(av[1]);
 	fdt = open(av[2], O_TRUNC | O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR
 		   | S_IRGRP | S_IWGRP | S_IROTH);
+	if (fdt == -1)
+		_err99(av[2]);
 	cpy = malloc(1024 * sizeof(char));
 	while ((nb = read(fdf, cpy, 1024)) > 0)
 	{
 		if (write(fdt, cpy, nb) != nb)
-		{
-			nb = -1;
-			break;
-		}
-	}
-	if (nb == -1 || fdt == -1)
-	{
-		dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
+			_err99(av[2]);
 	}
 	free(cpy);
-	if (close(fdf) == -1 || close(fdt) == -1)
-	{
-		dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n",
-			(close(fdf) == -1 ? fdf : fdt));
-		exit(100);
-	}
+	if (close(fdf) == -1)
+		_err100(fdf);
+	if (close(fdt) == -1)
+		_err100(fdt);
 	return (0);
+}
+
+/**
+ * _err97 - prints error message and exits with code 97
+ *
+ */
+void _err97(void)
+{
+	dprintf(STDOUT_FILENO, "Usage: cp file_from file_to\n");
+	exit(97);
+}
+
+/**
+ * _err98 - prints error message and exits with code 98
+ *
+ * @s: string to use in message
+ */
+void _err98(char *s)
+{
+	dprintf(STDOUT_FILENO, "Error: Can't read from file %s\n", *s);
+	exit(98);
+}
+
+/**
+ * _err99 - prints error message and exits with code 99
+ *
+ * @s: string to use in message
+ */
+void _err99(char *s)
+{
+	dprintf(STDOUT_FILENO, "Error: Can't write to %s\n", *s);
+	exit(99);
+}
+
+/**
+ * _err100 - prints error message and exits with code 100
+ *
+ * @n: filedescriptor
+ */
+void _err100(int n)
+{
+	dprintf(STDOUT_FILENO, "Error: Can't close fd %d\n", n);
+	exit(100);
 }
