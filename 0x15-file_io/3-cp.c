@@ -34,12 +34,12 @@ int main(int ac, char **av)
 	fdt = open(av[2], O_TRUNC | O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR
 		   | S_IRGRP | S_IWGRP | S_IROTH);
 	cpy = malloc(1024 * sizeof(char));
-	while ((nb = read(fdf, cpy, sizeof(cpy))) > 0)
+	while ((nb = read(fdf, cpy, 1024)) > 0)
 	{
-		if (write(fdt, cpy, nb) != nb || write(fdt, cpy, nb) == -1)
+		if (write(fdt, cpy, nb) != nb)
 		{
 			nb = -1;
-			exit(99);
+			break;
 		}
 	}
 	if (nb == -1 || fdt == -1)
