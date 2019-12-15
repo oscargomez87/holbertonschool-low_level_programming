@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
+ * free_dlistint - frees memoery used by a double linked list
  *
- *
- *
+ * @head: double linked list
  */
 void free_dlistint(dlistint_t *head)
 {
