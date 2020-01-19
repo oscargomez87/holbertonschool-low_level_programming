@@ -18,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (key == NULL || *key == '\0' || value == NULL)
 		return (0);
-	kindex = key_index((unsigned char *)key, 1024);
+	kindex = key_index((unsigned char *)key, ht->size);
 	temp = ht->array[kindex];
 	ht->array[kindex] = malloc(sizeof(hash_node_t));
 	if (ht->array[kindex] == NULL)
