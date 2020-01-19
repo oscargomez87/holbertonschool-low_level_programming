@@ -20,6 +20,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	kindex = key_index((unsigned char *)key, ht->size);
 	temp = ht->array[kindex];
+	while (temp)
+	{
+		if (!strcmp(temp->key, key))
+		{
+			free(temp->value);
+			temp->value = strdup(value);
+			if (temp->value == NULL)
+				return (0);
+			return (1);
+		}
+		temp = temp->next;
+	}
+	temp = ht->array[kindex];
 	ht->array[kindex] = malloc(sizeof(hash_node_t));
 	if (ht->array[kindex] == NULL)
 		return (0);
