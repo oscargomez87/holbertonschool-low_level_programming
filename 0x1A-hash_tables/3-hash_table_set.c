@@ -23,12 +23,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	ht->array[kindex] = malloc(sizeof(hash_node_t));
 	if (ht->array[kindex] == NULL)
 		return (0);
-	ht->array[kindex]->key = strdup(key);
-	if (ht->array[kindex]->key == NULL)
-	{
-		free(ht->array[kindex]);
-		return (0);
-	}
+	ht->array[kindex]->key = key;
 	ht->array[kindex]->value = strdup(value);
 	if (ht->array[kindex]->value == NULL)
 	{
