@@ -24,7 +24,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[kindex] == NULL)
 		return (0);
 	ht->array[kindex]->key = strdup(key);
+	if (ht->array[kindex]->key == NULL)
+	{
+		free(ht->array[kindex]);
+		return (0);
+	}
 	ht->array[kindex]->value = strdup(value);
+	if (ht->array[kindex]->value == NULL)
+	{
+		free(ht->array[kindex]->key);
+		free(ht->array[kindex]);
+		return (0);
+	}
 	ht->array[kindex]->next = temp;
 	return (1);
 }
