@@ -20,5 +20,4 @@ def island_perimeter(grid):
                     perimeter -= 1
                 if grid[idx1][idx2 + 1] == 0:
                     break
-        print("{} per: {}".format(idx1, perimeter))
     return perimeter
